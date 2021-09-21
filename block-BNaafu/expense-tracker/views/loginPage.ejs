@@ -1,0 +1,45 @@
+<%- include partials/header %>
+<main>
+    <section class="hero">
+        <div class="overlay-empty"></div>
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="image-wrapper">
+
+                    <img src="/images/undraw_Access_account_re_8spm.svg" alt="">
+                </div>
+                <div class=".login-content">
+                    <form class="form" action="/users/login" method="POST">
+                        <fieldset class="login-wrapper">
+                            <legend>Login</legend>
+                            <div class="login-details">
+                                <label>
+                                    Email:
+                                    <input type="email" name="email" id="">
+                                </label>
+                                <label>
+                                    Password :
+                                    <input type="password" name="password" id="">
+                                </label>
+                            </div>
+                            
+                            <button type="submit">Submit</button>
+                        </fieldset>
+                    </form>
+                    <div  class="border-bottom"></div>
+                    <div class="social-login">
+                        <a href="/auth/github">
+                            <i class="fab fa-github"></i>
+                            <span>Login WIth Github</span>
+                        </a>
+                        <a href="/auth/google">
+                            <i class="fab fa-google"></i>
+                            <span>Login with Google</span>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+</main>

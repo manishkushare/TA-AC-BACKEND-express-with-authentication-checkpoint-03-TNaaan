@@ -1,0 +1,216 @@
+<%- include partials/header %>
+
+<main>
+    <section class="hero">
+        <div class="overlay-empty"></div>
+     
+        <div class="container">
+            <section class="user-dashboard">
+                <article class="filter-section">
+                    <div class="filter filter-by-current-month">
+                        <h2>Filter By Current Month</h2>
+                        <form action="/users" method="GET">
+                            <button type="submit"><%= moment().format('MMMM')%></button>
+
+                        </form>
+                        
+                    </div>
+                    <div class="filter filter-by-date">
+                        <h2>Filter By Date</h2>
+                        <form action="/users/filter/bydate" method="POST">
+                            <label >
+                                Start Date:
+                                <input type="date" name="startDate" id="">
+                            </label>
+                            <label>
+                                End Date:
+                                <input type="date" name="endDate" id="">
+                            </label>
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                    <div class="filter filter-by-income">
+                        <h2>Filter By Income Category</h2>
+                        <form action="/users/incomecategory?category" method="POST">
+                            <select name="category" id="">
+                                <% if(uniqueIncomeCategoryArray){ %>
+                                    <% uniqueIncomeCategoryArray.forEach(cat => { %>
+                                        <option value="<%= cat %>"><%= cat %></option>
+                                    <% }) %>
+                                        <option value="All">All</option>
+                                        
+                                <% } else { %>
+                                        <option value="" selected>Select Option</option>
+
+                                <% } %>
+                                
+    
+                            </select>
+                            <button type="submit">Submit</button>
+
+                        </form>
+                        
+                    </div>
+                    <div class="filter filter-by-expense-category">
+                        <h2>Filter By Expense Category</h2>
+                        <form action="/users/expensecategory?category" method="POST">
+                            <select name="category" id="">
+                                <% if(uniqueExpenseCategoryArray){ %>
+                                    <% uniqueExpenseCategoryArray.forEach(cat => { %>
+                                        <option value="<%= cat %>"><%= cat %></option>
+                                    <% }) %>
+                                    <option value="All">All</option>
+
+                                <% } else { %>
+                                        <option value="" selected>Select Option</option>
+
+                                <% } %>
+    
+                            </select>
+                            <button type="submit">Submit</button>
+
+                        </form>
+                    </div>
+                    <div class="filter filter-by-date-expense">
+                        <h2>Filter by Expense and Date</h2>
+                        <form action="/users/filterExpenseAndDate/?category" method="POST">
+                            <label >
+                                Start Date:
+                                <input type="date" name="startDate" id="">
+                            </label>
+                            <label>
+                                End Date:
+                                <input type="date" name="endDate" id="">
+                            </label>
+                            <label for="">
+                                Expense Category
+                                <select name="category" id="">
+                                    <% if(uniqueExpenseCategoryArray){ %>
+                                        <% uniqueExpenseCategoryArray.forEach(cat => { %>
+                                            <option value="<%= cat %>"><%= cat %></option>
+                                        <% }) %>
+                                            <option value="All">All</option>
+
+                                    <% } else { %>
+                                            <option value="" selected>Select Option</option>
+    
+                                    <% } %>
+    
+                                </select>
+                            </label>
+                            <button type="submit">Submit</button>
+                        </form>
+                        
+                    </div>
+                    <div class="filter filter-by-date-income">
+                        <h2>Filter by Income and Date</h2>
+                        <form action="/users/filterIncomeAndDate/?category" method="POST">
+                            <label >
+                                Start Date:
+                                <input type="date" name="startDate" id="">
+                            </label>
+                            <label>
+                                End Date:
+                                <input type="date" name="endDate" id="">
+                            </label>
+                            <label for="">
+                                Income Source
+                                <select name="category" id="">
+                                    <% if(uniqueIncomeCategoryArray){ %>
+                                        <% uniqueIncomeCategoryArray.forEach(cat => { %>
+                                            <option value="<%= cat %>"><%= cat %></option>
+                                        <% }) %>
+                                            <option value="All">All</option>
+                                    <% } else { %>
+                                            <option value="" selected>Select Option</option>
+    
+                                    <% } %>
+                                    
+        
+                                </select>
+                            </label>
+                            <button type="submit">Submit</button>
+                        </form>
+                        
+                    </div>
+
+                </article>
+                <article class="portfolio-data">
+                    <div class="timeline">
+                        <% if(pathName === '/filterbydate'){ %>
+                            <span><%= startDate %></span>
+                            <span>-</span>
+                            <span><%= endDate %></span>
+                        <% }else if(pathName === "/"){ %>
+                            <span><%= moment().format('MMMM') %></span>-
+                            <span><%= moment().format('YYYY') %></span>
+                        <% } else if(pathName === "/incomecategory"){ %>
+                            <h2>Filtered By Income Category of <%= category%> only for last 30 days</h2>
+                            <span><%= moment(thirtyDaysPrior).format("DD-MM-YYYY") %></span>
+                            <span>-</span>
+                            <span><%= moment().format('DD-MM-YYYY')%></span>
+                            <% if(!data) { %>
+                            <h2>No Entries for particular conditions</h2>
+                            <% }%>
+                        <% }else if(pathName === "/expensecategory"){ %>
+                            <h2>Filtered By Expense Category of <%= category%> only for last 30 days</h2>
+                            <span><%= moment(thirtyDaysPrior).format("DD-MM-YYYY") %></span>
+                            <span>-</span>
+                            <span><%= moment().format('DD-MM-YYYY')%></span>
+                        <% } %> %>
+                        
+                    </div>
+                    
+                    <div class="monthly-sheet">
+                                <div class="entry entry-title">
+                                    <span>Transaction Type</span>
+                                    <span>Source/Category</span>
+                                    <span>Trans. detail</span>
+                                    <span>Amount</span>
+                                    <span>Date</span>
+                                    <span>Actions</span>
+                                </div>
+                        <% data.forEach(entry => { %>
+                            <% if(entry.entryType === "income"){ %>
+                                <div class="entry entry-income">
+                                    <span><%= entry.entryType %></span>
+                                    <span><%= entry.source %></span>
+                                    <span><%= entry.description.name %></span>
+                                    <span><i class="fas fa-rupee-sign"></i><%= entry.description.amount %>/-</span>
+                                    <span><%= moment(entry.description.date).format('DD-MMMM-YYYY')%></span>
+                                    <span class="action">
+                                        <a href="">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a href="">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </span>
+                                </div>
+                            <% } else if(entry.entryType === "expense"){ %>
+                                <div class="entry entry-expense">
+                                    <span><%= entry.entryType %></span>
+                                    <span><%= entry.category %></span>
+                                    <span><%= entry.description.name %></span>
+                                    <span><i class="fas fa-rupee-sign"></i><%= entry.description.amount %>/-</span>
+                                    <span><%= moment(entry.description.date).format('DD-MMMM-YYYY')%></span>
+                                    <span class="action">
+                                        <a href="">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a href="">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </span>
+                                </div>
+                            <% } %>
+                        <% }) %>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </section>
+  
+</main>
+
+<%- include partials/footer %>
