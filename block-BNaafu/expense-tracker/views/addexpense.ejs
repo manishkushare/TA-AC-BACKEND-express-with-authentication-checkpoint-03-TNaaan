@@ -1,0 +1,46 @@
+<%- include partials/header %>
+<main>
+    <section class="hero">
+        <div class="overlay-empty"></div>
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="image-wrapper">
+
+                    <img src="/images/undraw_Access_account_re_8spm.svg" alt="">
+                </div>
+                <!-- <div class=".login-content"> -->
+                    <form class="form" action="/users/addexpense" method="POST">
+                        <fieldset class="login-wrapper">
+                            <legend>Add Expense</legend>
+                            <div class="income-details">
+                                <label>
+                                    Expense Category: (*)
+                                    <input type="text" name="category" id="">
+                                </label>
+                                <label>
+                                    Expense Name: (*)
+                                    <input type="text" name="name" id="">
+                                </label>
+                                <label>
+                                    Amount: (8)
+                                    <input type="number" name="amount" id="">
+                                </label>
+                                <label>
+                                    Description :
+                                    <textarea name="info" id="" cols="30" rows="10"></textarea>
+                                </label>
+                                <label>
+                                    Date:
+                                    <input type="datetime-local" name="date" id="">
+                                </label>
+                            </div>
+                            
+                            <button type="submit">Submit</button>
+                        </fieldset>
+                    </form>
+                <!-- </div> -->
+                
+            </div>
+        </div>
+    </section>
+</main>

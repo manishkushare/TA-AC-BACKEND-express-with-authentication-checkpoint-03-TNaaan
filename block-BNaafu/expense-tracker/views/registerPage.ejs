@@ -1,0 +1,63 @@
+<%- include partials/header %>
+<main>
+    <section class="hero">
+        <div class="overlay-empty"></div>
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="image-wrapper">
+
+                    <img src="/images/undraw_my_app_re_gxtj.svg" alt="">
+                </div>
+                <form action="/users/signup" method="POST">
+                    <fieldset class="personal-info">
+                        <legend>Personal Details </legend>
+                        <label >
+                            Name:
+                            <input type="text" name="name">
+                        </label>
+                        <label>
+                            Email:
+                            <input type="email" name="email" id="">
+                        </label>
+                        <label>
+                            Password :
+                            <input type="password" name="password" id="">
+                        </label>
+                        <label>
+                            Age :
+                            <input type="number" name="age" id="">
+                        </label>
+                        <label>
+                            Phone Number :
+                            <input type="number" name="phone" id="">
+                        </label>
+                        <label >
+                            Upload Image:
+                            <input type="file" name="avatar" id="">
+                        </label>
+                    </fieldset>
+                    <fieldset class="address_info">
+                        <legend>Address</legend>
+                        <label>
+                            City:
+                            <input type="text" name="city">
+                        </label>
+                        <label>
+                            State:
+                            <input type="text" name="state">
+                        </label>
+                        <label >
+                            Country :
+                            <input type="text" name="country">
+                        </label>
+                        <label>
+                            Pin Code :
+                            <input type="number" name="pincode" id="">
+                        </label>
+                    </fieldset>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>

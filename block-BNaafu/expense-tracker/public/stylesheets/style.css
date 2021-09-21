@@ -1,0 +1,505 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #ddf7f8;
+}
+
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.overlay-empty {
+  height: 5.3125rem;
+}
+
+.border-bottom {
+  border-bottom: 5px dashed #ddf7f8;
+  width: 60%;
+  margin: 2rem auto;
+}
+
+.entry-income {
+  color: #388d38;
+  font-weight: 400;
+}
+
+.entry-expense {
+  color: red;
+}
+
+.header {
+  background-color: transparent;
+  position: relative;
+  z-index: 100;
+  box-shadow: 1px 9px 13px -1px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 9px 13px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 9px 13px -1px rgba(0, 0, 0, 0.75);
+}
+
+.row-1-wrapper {
+  padding: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.row-1-wrapper .logo a {
+  color: #045256;
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 50%;
+}
+
+.navigation .nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navigation .nav-list li {
+  margin-left: 1rem;
+}
+
+.navigation .nav-list li button {
+  background-color: #045256;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.hero {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  min-height: 100vh;
+  background-color: #ddf7f8 !important;
+}
+
+.hero-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr;
+  min-height: 80vh;
+  padding: 2rem 0;
+}
+
+.col-1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.col-1 .row {
+  width: 50%;
+  color: #ddf7f8;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #045456;
+  -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+          clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+
+.col-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.col-3 p {
+  font-size: 0.8rem;
+  color: #045456;
+}
+
+.col-3 h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #045456;
+}
+
+.col-3 button {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #045456;
+  color: white;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.col-2 img {
+  width: 100%;
+  height: 70vh;
+}
+
+.form-wrapper {
+  display: -ms-grid;
+  display: grid;
+  background-color: #045256;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  height: 75vh;
+  border-radius: 10px;
+  overflow: hidden;
+  grid-auto-flow: column;
+  box-shadow: 1px 2px 5px 7px rgba(0, 0, 0, 0.49);
+  -webkit-box-shadow: 1px 2px 5px 7px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 1px 2px 5px 7px rgba(0, 0, 0, 0.49);
+  margin: 2rem auto;
+}
+
+.form-wrapper fieldset {
+  border: 1px solid #ddf7f8;
+  border-radius: 10px;
+}
+
+.form-wrapper .personal-info, .form-wrapper .address_info {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  padding: 1rem 2rem;
+}
+
+.form-wrapper .personal-info legend, .form-wrapper .address_info legend {
+  margin-left: 2rem;
+}
+
+.form-wrapper .personal-info > label, .form-wrapper .address_info > label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: baseline;
+      -ms-flex-pack: baseline;
+          justify-content: baseline;
+}
+
+form {
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  color: #ddf7f8;
+  font-size: 0.9rem;
+}
+
+form button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem auto;
+  padding: 0.5rem 2.5rem;
+  border-radius: 10px;
+  border: none;
+}
+
+.image-wrapper {
+  width: 100%;
+  height: auto;
+  background-color: #ddf7f8;
+  padding: 2rem;
+}
+
+.image-wrapper img {
+  width: 100%;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.login-wrapper {
+  padding: 1rem 2rem;
+}
+
+.login-wrapper .login-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.social-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.social-login a {
+  text-decoration: none;
+  padding: 0 1rem;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.social-login a i {
+  color: #ddf7f8;
+  font-size: 5rem;
+  margin: 0 auto;
+}
+
+.social-login a span {
+  color: #ddf7f8;
+  margin: 0 auto;
+}
+
+.income-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.income-details > label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.onboarding-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+}
+
+.onboarding-wrapper .add-income, .onboarding-wrapper .add-expense, .onboarding-wrapper .view-portfolio {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.onboarding-wrapper .add-income .img-wrapper, .onboarding-wrapper .add-expense .img-wrapper, .onboarding-wrapper .view-portfolio .img-wrapper {
+  width: 350px;
+  height: 350px;
+}
+
+.onboarding-wrapper .add-income .img-wrapper img, .onboarding-wrapper .add-expense .img-wrapper img, .onboarding-wrapper .view-portfolio .img-wrapper img {
+  width: 100%;
+}
+
+.user-dashboard {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+  color: #045456;
+  padding: 2rem 2rem;
+  border-radius: 10px;
+}
+
+.filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 2px solid #ddf7f8;
+  border-radius: 10px 10px;
+}
+
+.filter form label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.filter-section {
+  padding: 2rem 1rem;
+  background-color: #045456;
+  color: #ddf7f8;
+  border-radius: 10px;
+}
+
+.filter-section input, .filter-section select {
+  width: 100%;
+}
+
+.filter-section :last-child {
+  border-bottom: none;
+}
+
+.portfolio-data {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #e0c9a6;
+}
+
+.monthly-sheet {
+  padding: 0.5rem 1rem;
+}
+
+.monthly-sheet :last-child {
+  border-bottom: none;
+}
+
+.entry-title {
+  font-weight: 600;
+}
+
+.entry {
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 0.6fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.6fr;
+  grid-gap: 5px;
+  border-bottom: 1px solid #045456;
+  border-radius: 10px 10px;
+}
+
+.timeline {
+  text-align: center;
+  padding-top: 2rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.action a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.action a i {
+  color: black;
+}
+/*# sourceMappingURL=style.css.map */

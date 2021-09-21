@@ -1,0 +1,94 @@
+.form-wrapper {
+    display: grid;
+    background-color: rgb(4, 82, 86);
+    grid-template-columns: 1fr 1fr;
+    height: 75vh;
+    border-radius: 10px;
+    overflow: hidden;
+    grid-auto-flow: column;
+    box-shadow: 1px 2px 5px 7px rgba(0,0,0,0.49);
+    -webkit-box-shadow: 1px 2px 5px 7px rgba(0,0,0,0.49);
+    -moz-box-shadow: 1px 2px 5px 7px rgba(0,0,0,0.49);
+    margin: 2rem auto;
+    
+    
+    fieldset{
+        border: 1px solid rgb(221,247,248);
+        border-radius: 10px;
+    }
+    .personal-info,.address_info{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        padding: 1rem 2rem;
+        legend {
+            margin-left: 2rem;
+        }
+        &>label{
+            display: flex; 
+            flex-direction: column;
+            justify-content: baseline;
+        }
+    }
+}
+
+form {
+    padding:  1rem 2rem;
+    border-radius: 10px;
+    color: rgb(221,247,248);
+    font-size: 0.9rem;
+    button {
+        display: flex;
+        margin:  1rem auto;
+        padding: 0.5rem 2.5rem;
+        border-radius: 10px;
+        border: none;
+    }
+}
+.image-wrapper{
+    width: 100%;
+    height: auto;
+    background-color: rgb(221,247,248);
+    padding: 2rem;
+    img{
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+}
+
+.login-wrapper{
+    padding: 1rem 2rem;
+    .login-details{
+        display: flex;
+
+    }
+}
+.social-login {
+    display: flex;
+    justify-content: center;
+    a{
+        text-decoration: none;
+        padding: 0 1rem;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        i{
+            color: rgb(221,247,248);
+            font-size: 5rem;
+            margin: 0 auto;
+        }
+        span{
+            color: rgb(221,247,248);
+            margin: 0 auto;
+        }
+    }
+}
+.income-details {
+    display: flex;
+    flex-direction: column;
+    &>label{
+        display: flex;
+        flex-direction: column;
+    }
+}
