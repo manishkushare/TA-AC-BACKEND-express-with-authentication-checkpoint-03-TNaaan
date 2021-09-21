@@ -1,0 +1,42 @@
+<%- include partials/header %>
+<main>
+    <section class="hero">
+        <div class="overlay-empty"></div>
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="image-wrapper">
+
+                    <img src="/images/undraw_Access_account_re_8spm.svg" alt="">
+                </div>
+                <!-- <div class=".login-content"> -->
+                    <form class="form" action="/users/addincome" method="POST">
+                        <fieldset class="login-wrapper">
+                            <legend>Add Income</legend>
+                            <div class="income-details">
+                                <label>
+                                    Income Source:
+                                    <input type="text" name="source" id="">
+                                </label>
+                                <label>
+                                    Income Name :
+                                    <input type="text" name="name" id="">
+                                </label>
+                                <label>
+                                    Amount :
+                                    <input type="number" name="amount" id="">
+                                </label>
+                                <label >
+                                    Date:
+                                    <input type="datetime-local" name="date" id="">
+                                </label>
+                            </div>
+                            
+                            <button type="submit">Submit</button>
+                        </fieldset>
+                    </form>
+                <!-- </div> -->
+                
+            </div>
+        </div>
+    </section>
+</main>

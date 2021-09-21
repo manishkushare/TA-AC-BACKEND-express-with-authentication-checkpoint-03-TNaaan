@@ -1,0 +1,43 @@
+.header {
+    background-color: transparent;
+    position: relative;
+    z-index: 100;
+    box-shadow: 1px 9px 13px -1px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 1px 9px 13px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 9px 13px -1px rgba(0,0,0,0.75);
+}
+.row-1-wrapper{
+    padding: 1.5rem ;
+    // border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    .logo{
+        a{
+            color : rgb(4,82,86);
+            font-weight: 800;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+    }
+}
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    .nav-list{
+        display: flex;
+        li{
+            margin-left: 1rem;
+            button{
+                background-color : rgb(4,82,86);
+                color: white;
+                padding: 0.5rem 1rem;
+                border-radius: 10px;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
+    

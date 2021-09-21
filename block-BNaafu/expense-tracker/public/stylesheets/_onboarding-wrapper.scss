@@ -1,0 +1,18 @@
+.onboarding-wrapper{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    .add-income,.add-expense,.view-portfolio{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        .img-wrapper{
+            width: 350px;
+            height: 350px;
+            // height: 350px;
+            img{
+                width: 100%;
+            }
+        }
+        
+    }
+}
